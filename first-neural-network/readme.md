@@ -18,6 +18,6 @@ jupyter notebook first_network.ipynb
 
 ## result
 
-> Training loss: 0.305 ... Validation loss: 0.479
+> Training loss: 0.063 ... Validation loss: 0.145
 
 ![my result](./prediction.png)
