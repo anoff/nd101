@@ -5,3 +5,5 @@ embeddings/data/
 embeddings/text8.zip
 
 .ipynb_checkpoints/
+
+intro-to-tflearn/mnist/
