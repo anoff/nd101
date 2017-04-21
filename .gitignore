@@ -9,3 +9,4 @@ embeddings/text8.zip
 intro-to-tflearn/mnist/
 notMNIST_*.zip
 notMNIST.pickle
+*-ubyte.gz
