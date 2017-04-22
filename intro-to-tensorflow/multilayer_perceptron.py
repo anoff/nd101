@@ -63,7 +63,7 @@ with tf.Session() as sess:
         if epoch % display_step == 0:
             c = sess.run(cost, feed_dict={x: batch_x, y: batch_y})
             print("Epoch:", '%04d' % (epoch+1), "cost=", \
-                "{:.9f}".format(c))
+                "{:.9f}".format(c), "accuracy={}".format())
     print("Optimization Finished!")
 
     # Test model

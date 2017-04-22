@@ -10,3 +10,4 @@ intro-to-tflearn/mnist/
 notMNIST_*.zip
 notMNIST.pickle
 *-ubyte.gz
+model.ckpt.*
