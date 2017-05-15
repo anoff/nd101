@@ -11,3 +11,8 @@ notMNIST_*.zip
 notMNIST.pickle
 *-ubyte.gz
 model.ckpt.*
+
+# image-classification Ignore
+image-classification/*.p
+image-classification/cifar-10*
+__pycache__
