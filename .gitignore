@@ -19,3 +19,4 @@ image-classification/image_classification.*
 image-classification/checkpoint
 __pycache__
 
+embeddings/checkpoints/
