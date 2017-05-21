@@ -12,6 +12,14 @@
 * plot frequency of features to identify nodes that might not be necessary
 * [t-distributed Stochastic Neighbor Embedding (TSNE)](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) to visualize multi-dimensional (e.g. neural network weights)
 
+### embedding / word2vec
+
+* [embedding](https://en.wikipedia.org/wiki/Word_embedding) are used to speed up hidden layer calculations
+* for datasets with huge amount of classes (e.g. text ~50k+ words) instead of matrix multiplication with only a single _1_ in the input vector look up the weights directly with a word2vector index mechanism
+* [word2vec](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) is an embedding technique for text inputs
+* w2v also adds semantic information to the vector representation by reproducing the semantic similarity on the vector level (similar words have similar vectors)
+* CBOW (continous bag of words): surrounding words are used to define the one in the middle vs Skip-gram: middle word is used to predict surrounding words
+
 ## CNN
 
 > Convolutional neural networks generate higher order features by applying kernels over one section of a matrix at a time. Stacking convolutions and multiple kernels increases the _feature depth_.
@@ -41,3 +49,5 @@
 
 * LSTM cells prevent exploding💥/vanishing👻 gradients (would happen if you multiply weights across multiple executions)
 * basic LSTMs have gates to **forget**, **update** and **output** the hidden state using combinations of _sigmoid_ and _tanh_
+* depending on the task at hand individual LSTM cells might _solve tasks_ that can actually translate to the way humans solve things e.g. [keep track of how long a line of generated text is getting](https://youtu.be/iX5V1WpxxkY?t=27m23s)
+* combining [CNN and RNN](https://youtu.be/iX5V1WpxxkY?t=31m24s) allows to do more advanced things like image captions
