@@ -1,6 +1,7 @@
 EC2_REGION=us-east-1
 EC2_INSTANCEID=i-01311fdfc65141764
-EC2_URL=$(shell aws --region us-east-1 ec2 describe-instances --instance-ids i-01311fdfc65141764 --query "Reservations[*].Instances[*].PublicIpAddress" --output=text)
+EC2_URL=$(shell aws --region $(EC2_REGION) ec2 describe-instances --instance-ids $(EC2_INSTANCEID) --query "Reservations[*].Instances[*].PublicIpAddress" --output=text)
+
 # sync code
 syncup:
 	rsync -e "ssh -i ~/.ssh/deeplearning" -avz --exclude=".git/" . udacity@$(EC2_URL):~/nd101/tv-script-generation
