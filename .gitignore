@@ -20,3 +20,5 @@ image-classification/checkpoint
 __pycache__
 
 embeddings/checkpoints/
+
+tv-script-generation/save.*
