@@ -48,6 +48,19 @@
   * end with a few fully connected layers (traditional NN incl. activation fns)
   * convolutions detect higher order features (e.g. ears) and fully connected layer (multi layer perceptrons) create _combinations_ of those features for the final classification
 
+### transfer-learning
+
+* take a pre-learned CNN like vggnet, alexnet and add your own classifier
+* super fast as you only need to train the classifier
+* HowTo
+  * cut off the classification of the existing network
+  * run the dataset through the top part of the CNN to calculate activation `codes` (output of the convolutional layers)
+  * create new N-dimensional NN >=2 fully connected layers
+    * 1+ hidden layer
+    * 1 output layer (N=number of classes)
+  * train the classification part with the `codes` as input
+  * plug the CNN and the classification together to get a model for production
+
 ## RNN
 
 > Recurrent neural networks are able to adapt their output depending on the sequence in which inputs were given.
