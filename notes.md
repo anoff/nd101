@@ -12,6 +12,11 @@
 * plot frequency of features to identify nodes that might not be necessary
 * [t-distributed Stochastic Neighbor Embedding (TSNE)](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) to visualize multi-dimensional (e.g. neural network weights)
 
+### data preparation
+
+* [sklearn/LabelBinarizer](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelBinarizer.html) for `string` or `int` labels
+* [sklearn/OneHotEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) works for `int` labels
+
 ### embedding / word2vec
 
 * [embedding](https://en.wikipedia.org/wiki/Word_embedding) are used to speed up hidden layer calculations
