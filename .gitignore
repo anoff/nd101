@@ -3,6 +3,7 @@
 # Ignore downloaded datasets
 embeddings/data/
 embeddings/text8.zip
+face_generation/data/
 
 .ipynb_checkpoints/
 
@@ -22,3 +23,10 @@ __pycache__
 embeddings/checkpoints/
 
 tv-script-generation/save.*
+
+*.pyc
+*.p
+*.pkl 
+
+*/.floyd*
+
