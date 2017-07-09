@@ -2,11 +2,14 @@ EC2_REGION=us-east-1
 EC2_INSTANCEID=i-01311fdfc65141764
 EC2_URL=$(shell aws --region $(EC2_REGION) ec2 describe-instances --instance-ids $(EC2_INSTANCEID) --query "Reservations[*].Instances[*].PublicIpAddress" --output=text)
 
+mkfile_path=$(abspath $(lastword $(MAKEFILE_LIST)))
+CURRENT_DIR=$(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
+
 # sync code
 syncup:
-	rsync -e "ssh -i ~/.ssh/deeplearning" -avz --exclude=".git/" . udacity@$(EC2_URL):~/nd101/${PWD##*/}
+	rsync -e "ssh -i ~/.ssh/deeplearning" -avz --exclude=".git/" . udacity@$(EC2_URL):~/nd101/$(CURRENT_DIR)
 syncdown:
-	rsync -e "ssh -i ~/.ssh/deeplearning" -avz --exclude=".git/" udacity@$(EC2_URL):~/nd101/${PWD##*/}/ .
+	rsync -e "ssh -i ~/.ssh/deeplearning" -avz --exclude=".git/" udacity@$(EC2_URL):~/nd101/$(CURRENT_DIR)/ .
 # start/stop instance
 ec2stop:
 	aws --region $(EC2_REGION) ec2 stop-instances --instance-ids $(EC2_INSTANCEID)
