@@ -70,6 +70,17 @@
 * depending on the task at hand individual LSTM cells might _solve tasks_ that can actually translate to the way humans solve things e.g. [keep track of how long a line of generated text is getting](https://youtu.be/iX5V1WpxxkY?t=27m23s)
 * combining [CNN and RNN](https://youtu.be/iX5V1WpxxkY?t=31m24s) allows to do more advanced things like image captions
 
+## GAN
+
+> describe GAN
+
+* use discriminator to detect _fake_ images and a generator to create them
+* the discriminator is used twice during the overall training process
+  * it gets fed with real images and a target of _real_
+  * it gets trained together with the generator and a target of _fake_
+  * to achieve this in tensorflow the discriminator is generated twice but variables are re-used (achieved by `tf.variable_scope(reuse=True)`)
+* generator needs to create same output size as real images including value range (take care of `tanh` vs `sigmoid` etc)
+
 ## my mistakes
 * **always** think twice about activation functions (logits shouldn't have one)
 * input placeholders have an additional (first) `None` dimension to represent the batch size which is dynamic
