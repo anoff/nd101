@@ -72,8 +72,10 @@
 
 ## GAN
 
-> describe GAN
+> Generative adversarial networks (GANs) implement a system of two neural networks competing against each other in a zero-sum game framework. 
+This technique can generate photographs and other data in an unsupervised fashion.
 
+* learn probability distributions in given data
 * use discriminator to detect _fake_ images and a generator to create them
 * the discriminator is used twice during the overall training process
   * it gets fed with real images and a target of _real_
