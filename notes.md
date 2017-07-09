@@ -69,3 +69,7 @@
 * basic LSTMs have gates to **forget**, **update** and **output** the hidden state using combinations of _sigmoid_ and _tanh_
 * depending on the task at hand individual LSTM cells might _solve tasks_ that can actually translate to the way humans solve things e.g. [keep track of how long a line of generated text is getting](https://youtu.be/iX5V1WpxxkY?t=27m23s)
 * combining [CNN and RNN](https://youtu.be/iX5V1WpxxkY?t=31m24s) allows to do more advanced things like image captions
+
+## my mistakes
+* **always** think twice about activation functions (logits shouldn't have one)
+* input placeholders have an additional (first) `None` dimension to represent the batch size which is dynamic
