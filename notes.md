@@ -82,6 +82,7 @@ This technique can generate photographs and other data in an unsupervised fashio
   * it gets trained together with the generator and a target of _fake_
   * to achieve this in tensorflow the discriminator is generated twice but variables are re-used (achieved by `tf.variable_scope(reuse=True)`)
 * generator needs to create same output size as real images including value range (take care of `tanh` vs `sigmoid` etc)
+* [batch normalization](https://arxiv.org/abs/1502.03167) is required to have deep GANs
 
 ## my mistakes
 * **always** think twice about activation functions (logits shouldn't have one)
